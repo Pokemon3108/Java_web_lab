@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class StringController {
 
     @RequestMapping("/")
-    public StringDescription decript(@RequestParam() String name) {
-        return new StringDescription(StringDescription.isPolyndrom(name), name.length());
+    public StringDescription decript(@RequestParam() String str) {
+        return new StringDescription(StringDescription.isPolyndrom(str), str.length());
     }
 
 }
