@@ -12,7 +12,8 @@ public class StringController {
 
     @RequestMapping("/stringInfo")
     public StringDescription decript(@RequestParam() String str) {
-        return new StringDescription(StringDescriptionService.isPolyndrom(str), str.length());
+        StringDescriptionService service=new StringDescriptionService();
+        return new StringDescription(service.isPolyndrom(str), service.StringLength(str));
     }
 
 }
