@@ -1,0 +1,23 @@
+2020-03-23 14:38:54,182 INFO c.p.w.Web1Application [restartedMain] Starting Web1Application on DESKTOP-EUNDFIT with PID 16048 (started by User in D:\Учеба\Java_labs\Web)
+2020-03-23 14:38:54,191 INFO c.p.w.Web1Application [restartedMain] No active profile set, falling back to default profiles: default
+2020-03-23 14:38:54,247 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-23 14:38:54,248 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-23 14:38:54,926 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-03-23 14:38:54,937 INFO o.a.c.h.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-23 14:38:54,937 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2020-03-23 14:38:54,938 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-23 14:38:54,993 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-03-23 14:38:54,994 INFO o.s.w.c.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 746 ms
+2020-03-23 14:38:55,111 INFO o.s.s.c.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-23 14:38:55,203 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-03-23 14:38:55,217 INFO o.a.c.h.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-03-23 14:38:55,295 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-23 14:38:55,297 INFO c.p.w.Web1Application [restartedMain] Started Web1Application in 1.415 seconds (JVM running for 2.213)
+2020-03-23 14:39:03,135 INFO o.a.c.c.C.[.[.[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-23 14:39:03,135 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-03-23 14:39:03,140 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-03-23 14:39:03,160 INFO c.p.w.c.StringController [http-nio-8080-exec-1] Operation is good. String is: sfjlsf
+2020-03-23 14:39:07,067 INFO c.p.w.c.StringController [http-nio-8080-exec-2] Error. Bad request. String is empty
+2020-03-23 14:39:07,072 WARN o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [com.project1.web1.application.EmptyStringException: String is empty]
+2020-03-23 14:39:27,393 INFO c.p.w.c.StringController [http-nio-8080-exec-10] Error. Internal server error.String is: qwertyuiopasdfghjklzxcv
+2020-03-23 14:39:27,399 WARN o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [com.project1.web1.application.MyIllegalArgumentException: Illegal string]
