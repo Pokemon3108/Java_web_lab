@@ -5,11 +5,11 @@ import com.project1.web1.application.MyIllegalArgumentException;
 
 import com.project1.web1.model.StringDescription;
 import com.project1.web1.service.StringDescriptionService;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.logging.log4j.Level;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,8 +21,6 @@ public class StringController {
     @RequestMapping("/stringInfo")
     public StringDescription decript(@RequestParam() String str) {
         StringDescriptionService service=new StringDescriptionService();
-
-
 
         if (str=="") {
             logger.info("Error. Bad request. String is empty");

@@ -2,7 +2,6 @@ package com.project1.web1.service;
 
 public class StringDescriptionService {
 
-
     public String isPolyndrom(String str){
 
         String p="Да";
