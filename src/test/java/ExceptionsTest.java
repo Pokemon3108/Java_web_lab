@@ -1,33 +1,27 @@
 import com.project1.web1.application.EmptyStringException;
 import com.project1.web1.application.MyIllegalArgumentException;
 import com.project1.web1.controller.StringController;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
+
 
 public class ExceptionsTest {
-    @Test
-    public void EmptyStringExceptionTest() throws EmptyStringException {
+    @Test(expectedExceptions = EmptyStringException.class,expectedExceptionsMessageRegExp = "String is empty")
+    public void EmptyStringExceptionTest() {
         StringController controller=new StringController();
         String checkedString="";
-        Throwable thrown=catchThrowable(()->{
-            controller.decript(checkedString);
-        });
-       assertThat(thrown).isInstanceOf(EmptyStringException.class);
-        assertThat(thrown.getMessage()).isNotBlank();
+        controller.decript(checkedString);
+        Assert.fail();
 
     }
 
-    @Test
-    public void MyIllegalArgumentExceptionTest() throws MyIllegalArgumentException {
+    @Test(expectedExceptions=MyIllegalArgumentException.class, expectedExceptionsMessageRegExp = "Illegal string")
+    public void MyIllegalArgumentExceptionTest()  {
         StringController controller=new StringController();
         String checkedString="string more than 20 symbols";
-        Throwable thrown=catchThrowable(()->{
-            controller.decript(checkedString);
-        });
-        assertThat(thrown).isInstanceOf(MyIllegalArgumentException.class);
-        assertThat(thrown.getMessage()).isNotBlank();
+        controller.decript(checkedString);
+        Assert.fail();
 
     }
 }

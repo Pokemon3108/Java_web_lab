@@ -1,14 +1,5 @@
-19:56:29.413 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Operation is good. String is: оло
-19:56:31.744 [http-nio-8080-exec-4] INFO com.project1.web1.controller.StringController Error. Bad request. String is empty
-19:56:52.531 [http-nio-8080-exec-5] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: zxcvbnmasdfghjklqwertyuio
-22:20:10.674 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: zxcvbnmasdfghjklqwertyuio
-22:22:10.259 [main] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: string more than 20 symbols
-22:22:10.298 [main] INFO com.project1.web1.controller.StringController Error. Bad request. String is empty
-22:30:12.203 [main] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: string more than 20 symbols
-22:30:12.226 [main] INFO com.project1.web1.controller.StringController Error. Bad request. String is empty
-22:32:22.991 [main] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: string more than 20 symbols
-22:32:23.014 [main] INFO com.project1.web1.controller.StringController Operation is good. String is: zx
-22:36:28.631 [main] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: string more than 20 symbols
-22:36:28.656 [main] INFO com.project1.web1.controller.StringController Error. Bad request. String is empty
-22:36:40.658 [main] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: string more than 20 symbols
-22:36:40.679 [main] INFO com.project1.web1.controller.StringController Error. Bad request. String is empty
+20:00:25.268 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Operation is good. String is: saas
+20:00:26.458 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Operation is good. String is: saas
+20:00:30.277 [http-nio-8080-exec-4] INFO com.project1.web1.controller.StringController Operation is good. String is: sa
+20:00:33.747 [http-nio-8080-exec-6] INFO com.project1.web1.controller.StringController Error. Bad request. String is empty
+20:00:42.912 [http-nio-8080-exec-8] INFO com.project1.web1.controller.StringController Error. Internal server error.String is: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
