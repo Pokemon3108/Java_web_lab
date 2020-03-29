@@ -1,5 +1,8 @@
 package com.project1.web1.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class StringDescriptionService {
 
     public String isPolyndrom(String str){

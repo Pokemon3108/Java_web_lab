@@ -1,9 +1,12 @@
 package com.project1.web1.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class StringDescription {
 
     private String polyndrom;
     private int stringLength;
+
 
     public StringDescription(String polyndrom, int len) {
         this.polyndrom = polyndrom;
