@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class CacheService {
@@ -12,7 +13,7 @@ public class CacheService {
     Map<String,StringDescription> cache;
 
     public CacheService(){
-        cache=new HashMap<>();
+        cache=new ConcurrentHashMap<>();
     }
     public boolean isInCashe(String str){
         return cache.containsKey(str);
