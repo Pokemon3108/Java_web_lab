@@ -5,6 +5,7 @@ import com.project1.web1.application.MyIllegalArgumentException;
 
 import com.project1.web1.model.StringDescription;
 import com.project1.web1.service.CacheService;
+import com.project1.web1.service.CounterService;
 import com.project1.web1.service.StringDescriptionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +25,14 @@ public class StringController {
     @Autowired
     private CacheService cacheService;
 
+    @Autowired
+    private CounterService counterService;
+
     @RequestMapping("/stringInfo")
     public StringDescription decript(@RequestParam() String str) {
         StringDescriptionService service=new StringDescriptionService();
 
-
+        counterService.increment();
 
         if (str=="") {
             logger.info("Error. Bad request. String is empty");
@@ -49,6 +53,12 @@ public class StringController {
         StringDescription description=new StringDescription(service.isPolyndrom(str), service.StringLength(str));
         cacheService.setDescription(str,description);
         return description;
+    }
+
+    @RequestMapping("/counter")
+    public CounterService getCounterService(){
+        counterService.increment();
+        return counterService;
     }
 
 }

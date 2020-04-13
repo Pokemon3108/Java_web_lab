@@ -1,10 +1,10 @@
 package com.project1.web1.service;
 import com.project1.web1.model.StringDescription;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-import java.util.*;
+import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class CacheService {

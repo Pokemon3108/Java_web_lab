@@ -7,9 +7,9 @@ public class StringDescriptionService {
 
     public String isPolyndrom(String str){
 
-        String p="Да";
+        String p="Yes";
         for (int i=0, j=str.length()-1; i<j; ++i, --j){
-            if (str.charAt(i)!=str.charAt(j)) p="Нет";
+            if (str.charAt(i)!=str.charAt(j)) p="No";
         }
 
         return p;
