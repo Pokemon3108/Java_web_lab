@@ -998,3 +998,39 @@
 23:30:00.785 [http-nio-8080-exec-30] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: very
 23:30:00.785 [http-nio-8080-exec-166] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: very
 23:30:00.809 [http-nio-8080-exec-194] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: very
+00:37:25.270 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: very
+00:44:59.400 [http-nio-8080-exec-2] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: very
+00:45:05.495 [http-nio-8080-exec-6] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: very
+00:45:06.466 [http-nio-8080-exec-7] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: very
+00:45:50.596 [http-nio-8080-exec-2] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: very
+20:03:32.342 [http-nio-8080-exec-2] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: {
+	"str" : "polinilop"
+}
+20:09:19.921 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: {
+	"str" : "polinilop"
+}
+20:11:25.171 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: pap
+20:11:35.594 [http-nio-8080-exec-7] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: pap
+20:13:12.936 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: pap
+20:14:12.439 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: pap
+20:14:21.341 [http-nio-8080-exec-4] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: pap
+20:15:49.035 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: pap
+20:16:02.869 [http-nio-8080-exec-5] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: papjkkjkh
+20:16:04.207 [http-nio-8080-exec-6] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: papjkkjkh
+20:16:42.607 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: papjkkjkh
+20:18:50.394 [http-nio-8080-exec-2] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: papjkkjkh
+20:21:31.060 [http-nio-8080-exec-4] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: papjkkjkh
+20:23:30.881 [http-nio-8080-exec-5] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: {
+	"str" : "polinilop"
+}
+20:23:36.287 [http-nio-8080-exec-3] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: pap
+20:23:46.305 [http-nio-8080-exec-9] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: {
+	"str" : "polinilop"
+}
+20:24:35.421 [http-nio-8080-exec-2] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: {
+	"str" : "polinilop"
+}
+20:27:09.398 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: com.project1.web1.model.StringDescription@33a475f
+20:27:33.831 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Error. Internal server error. String is: com.project1.web1.model.StringDescription@509d9028
+20:31:06.183 [http-nio-8080-exec-1] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: polinilop
+14:49:14.062 [http-nio-8080-exec-2] INFO com.project1.web1.controller.StringController Request is good (not from cache). String is: polinilop

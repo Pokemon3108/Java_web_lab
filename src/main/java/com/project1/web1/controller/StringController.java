@@ -1,21 +1,29 @@
 package com.project1.web1.controller;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project1.web1.application.EmptyStringException;
 import com.project1.web1.application.MyIllegalArgumentException;
 
+import com.project1.web1.model.ListStringDto;
 import com.project1.web1.model.StringDescription;
+import com.project1.web1.model.StringDto;
 import com.project1.web1.service.CacheService;
 import com.project1.web1.service.CounterService;
 import com.project1.web1.service.StringDescriptionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 @RestController
 public class StringController {
@@ -28,10 +36,35 @@ public class StringController {
     @Autowired
     private CounterService counterService;
 
-    @RequestMapping("/stringInfo")
-    public StringDescription decript(@RequestParam() String str) {
-        StringDescriptionService service=new StringDescriptionService();
+    @Autowired
+    private StringDescriptionService stringService;
 
+    @RequestMapping("/stringInfo")
+    public StringDescription decript(@RequestParam String str) {
+        return formResponse(str);
+    }
+
+    @RequestMapping("/counter")
+    public CounterService getCounterService(){
+        counterService.increment();
+        return counterService;
+    }
+
+    @PostMapping("/stringInfoJson")
+    public StringDescription getJsonDescript(@RequestBody StringDto str){
+        return formResponse(str.getStr());
+    }
+
+
+    @RequestMapping("/stringListInfo")
+    public List<StringDescription> getListStringsDescript(@RequestBody ListStringDto list){
+        List<StringDescription> descriptionList=new ArrayList<>();
+        descriptionList=stringService.getListDescription(list.getList());
+
+        return descriptionList;
+    }
+
+    private StringDescription formResponse(String str){
         counterService.increment();
 
         if (str=="") {
@@ -50,15 +83,8 @@ public class StringController {
         }
 
         logger.info("Request is good (not from cache). String is: "+str);
-        StringDescription description=new StringDescription(service.isPolyndrom(str), service.StringLength(str));
+        StringDescription description=new StringDescription(stringService.isPolyndrom(str), stringService.getStringLength(str));
         cacheService.setDescription(str,description);
         return description;
     }
-
-    @RequestMapping("/counter")
-    public CounterService getCounterService(){
-        counterService.increment();
-        return counterService;
-    }
-
 }

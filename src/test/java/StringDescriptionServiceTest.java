@@ -19,7 +19,7 @@ public class StringDescriptionServiceTest {
         StringDescriptionService service = new StringDescriptionService();
         String checkedString = "gog";
         int len = 3;
-        assertEquals(len, service.StringLength(checkedString));
+        assertEquals(len, service.getStringLength(checkedString));
     }
 
     @Test
