@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListStringDto {
+
     List<StringDto> list;
+
+    public ListStringDto(List<StringDto> list) {
+        this.list = list;
+    }
+    public ListStringDto(){}
 
     public List<StringDto> getList() {
         return list;

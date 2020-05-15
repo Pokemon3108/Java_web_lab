@@ -7,6 +7,7 @@ public class StringDescription {
     private String polyndrom;
     private int stringLength;
 
+    public StringDescription() { }
 
     public StringDescription(String polyndrom, int len) {
         this.polyndrom = polyndrom;

@@ -3,32 +3,25 @@ package com.project1.web1.controller;
 import com.project1.web1.application.EmptyStringException;
 import com.project1.web1.application.MyIllegalArgumentException;
 
-import com.project1.web1.model.ListStringDto;
-import com.project1.web1.model.StringDescription;
-import com.project1.web1.model.StringDto;
-import com.project1.web1.service.CacheService;
-import com.project1.web1.service.CounterService;
-import com.project1.web1.service.StringDescriptionService;
+import com.project1.web1.model.*;
+import com.project1.web1.service.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 @RestController
 public class StringController {
-
-    static final Logger logger=LogManager.getLogger(StringController.class);
 
     @Autowired
     private CacheService cacheService;
@@ -39,9 +32,15 @@ public class StringController {
     @Autowired
     private StringDescriptionService stringService;
 
+    @Autowired
+    private ValidationService validationService;
+
+    @Autowired
+    private StatisticService statisticService;
+
     @RequestMapping("/stringInfo")
     public StringDescription decript(@RequestParam String str) {
-        return formResponse(str);
+        return stringService.formResponse(str);
     }
 
     @RequestMapping("/counter")
@@ -52,39 +51,21 @@ public class StringController {
 
     @PostMapping("/stringInfoJson")
     public StringDescription getJsonDescript(@RequestBody StringDto str){
-        return formResponse(str.getStr());
+        return stringService.formResponse(str.getStr());
     }
 
 
     @RequestMapping("/stringListInfo")
     public List<StringDescription> getListStringsDescript(@RequestBody ListStringDto list){
         List<StringDescription> descriptionList=new ArrayList<>();
-        descriptionList=stringService.getListDescription(list.getList());
-
+        descriptionList=stringService.getListDescription(list);
         return descriptionList;
     }
 
-    private StringDescription formResponse(String str){
-        counterService.increment();
-
-        if (str=="") {
-            logger.info("Error. Bad request. String is empty");
-            throw new EmptyStringException();
-        }
-        if (str.length()>20) {
-            logger.info("Error. Internal server error. String is: "+str);
-            throw new MyIllegalArgumentException();
-        }
-
-
-        if (cacheService.isInCashe(str)) {
-            logger.info("Request has been taken from cache. String is: "+str);
-            return cacheService.getDescription(str);
-        }
-
-        logger.info("Request is good (not from cache). String is: "+str);
-        StringDescription description=new StringDescription(stringService.isPolyndrom(str), stringService.getStringLength(str));
-        cacheService.setDescription(str,description);
-        return description;
+    @PostMapping("/statistic")
+    public StatisticDto getStatistic(@RequestBody ListStringDto list){
+        return statisticService.getStatistic(list);
     }
+
+    
 }
