@@ -1,30 +1,33 @@
 package com.project1.web1.controller;
 
-import com.project1.web1.application.EmptyStringException;
-import com.project1.web1.application.MyIllegalArgumentException;
 
-import com.project1.web1.model.*;
-import com.project1.web1.service.*;
+import com.project1.web1.application.DataBaseException;
+
+
+import com.project1.web1.model.ListStringDto;
+import com.project1.web1.model.StatisticDto;
+import com.project1.web1.model.StringDescription;
+import com.project1.web1.model.StringDto;
+
+
+import com.project1.web1.service.CounterService;
+import com.project1.web1.service.DataBaseService;
+import com.project1.web1.service.StatisticService;
+import com.project1.web1.service.StringDescriptionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @RestController
 public class StringController {
-
-    @Autowired
-    private CacheService cacheService;
 
     @Autowired
     private CounterService counterService;
@@ -33,10 +36,10 @@ public class StringController {
     private StringDescriptionService stringService;
 
     @Autowired
-    private ValidationService validationService;
+    private StatisticService statisticService;
 
     @Autowired
-    private StatisticService statisticService;
+    private DataBaseService dataBaseService;
 
     @RequestMapping("/stringInfo")
     public StringDescription decript(@RequestParam String str) {
@@ -44,28 +47,44 @@ public class StringController {
     }
 
     @RequestMapping("/counter")
-    public CounterService getCounterService(){
+    public CounterService getCounterService() {
         counterService.increment();
         return counterService;
     }
 
     @PostMapping("/stringInfoJson")
-    public StringDescription getJsonDescript(@RequestBody StringDto str){
+    public StringDescription getJsonDescript(@RequestBody StringDto str) {
         return stringService.formResponse(str.getStr());
     }
 
 
     @RequestMapping("/stringListInfo")
-    public List<StringDescription> getListStringsDescript(@RequestBody ListStringDto list){
-        List<StringDescription> descriptionList=new ArrayList<>();
-        descriptionList=stringService.getListDescription(list);
+    public List<StringDescription> getListStringsDescript(@RequestBody ListStringDto list) {
+        List<StringDescription> descriptionList = new ArrayList<>();
+        descriptionList = stringService.getListDescription(list);
         return descriptionList;
     }
 
     @PostMapping("/statistic")
-    public StatisticDto getStatistic(@RequestBody ListStringDto list){
+    public StatisticDto getStatistic(@RequestBody ListStringDto list) {
         return statisticService.getStatistic(list);
     }
 
-    
+    @PostMapping("/statisticDB")
+    public ResponseEntity<Integer> getId(@RequestBody ListStringDto list) {
+        int id = dataBaseService.generateRandId();
+        dataBaseService.writeInputDataToDB(list, id);
+        StatisticDto statistic = statisticService.getStatistic(list);
+        dataBaseService.writeStatisticToDB(statistic, id);
+        dataBaseService.writeProcessToDB(true, id);
+        return new ResponseEntity(id, HttpStatus.OK);
+    }
+
+    @RequestMapping("/getInfoById")
+    public StatisticDto getStatisticFromDB(@RequestParam Integer id) {
+        if (!dataBaseService.isGoodStatus(id)) throw new DataBaseException();
+        return dataBaseService.getStatisticById(id);
+    }
+
+
 }

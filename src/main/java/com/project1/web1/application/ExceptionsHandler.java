@@ -17,4 +17,9 @@ public class ExceptionsHandler {
     public ResponseEntity<Object> handleMyNullPointerException(EmptyStringException e){
         return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(DataBaseException.class)
+    public ResponseEntity<Object> handleDataBaseException(DataBaseException e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NO_CONTENT);
+    }
 }
