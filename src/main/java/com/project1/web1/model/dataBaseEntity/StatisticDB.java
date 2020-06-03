@@ -1,6 +1,10 @@
 package com.project1.web1.model.dataBaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="statistic_data")

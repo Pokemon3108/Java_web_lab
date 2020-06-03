@@ -1043,3 +1043,12 @@
 00:28:54.345 [http-nio-8080-exec-5] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: polinilop
 00:28:54.348 [http-nio-8080-exec-5] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: joj
 00:28:54.348 [http-nio-8080-exec-5] INFO com.project1.web1.controller.StringController Request has been taken from cache. String is: jo
+19:07:13.304 [http-nio-8080-exec-1] INFO com.project1.web1.service.StringDescriptionService Request is good (not from cache). String is: qoq
+19:07:13.335 [http-nio-8080-exec-1] INFO com.project1.web1.service.StringDescriptionService Request is good (not from cache). String is: qas
+19:07:13.336 [http-nio-8080-exec-1] INFO com.project1.web1.service.StringDescriptionService Request is good (not from cache). String is: asdf
+19:11:23.498 [http-nio-8080-exec-2] INFO com.project1.web1.service.StringDescriptionService Request has been taken from cache. String is: qoq
+19:11:23.498 [http-nio-8080-exec-2] INFO com.project1.web1.service.StringDescriptionService Request has been taken from cache. String is: qas
+19:11:23.498 [http-nio-8080-exec-2] INFO com.project1.web1.service.StringDescriptionService Request has been taken from cache. String is: asdf
+19:20:57.246 [http-nio-8080-exec-2] INFO com.project1.web1.service.StringDescriptionService Request is good (not from cache). String is: qoq
+19:20:57.246 [http-nio-8080-exec-2] INFO com.project1.web1.service.StringDescriptionService Request is good (not from cache). String is: qas
+19:20:57.247 [http-nio-8080-exec-2] INFO com.project1.web1.service.StringDescriptionService Request is good (not from cache). String is: asdf

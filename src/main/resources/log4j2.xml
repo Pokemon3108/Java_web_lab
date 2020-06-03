@@ -13,11 +13,19 @@
     </Appenders>
     <Loggers>
         <!-- avoid duplicated logs with additivity=false -->
-        <Logger name="com.project1.web1.controller.StringController" level="info" additivity="false">
+        <Logger name="com.project1.web1.service.StringDescriptionService" level="info" additivity="false">
             <AppenderRef ref="File"/>
         </Logger>
         <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>
+
+        <Logger name="com.project1.web1.service.ValidationService" level="info" additivity="false">
+            <AppenderRef ref="File"/>
+        </Logger>
+
     </Loggers>
+
+
+
 </Configuration>

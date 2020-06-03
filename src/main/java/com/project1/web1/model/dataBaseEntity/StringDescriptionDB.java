@@ -1,9 +1,13 @@
 package com.project1.web1.model.dataBaseEntity;
 
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table (name="string_description")
+@Table(name="string_description")
 public class StringDescriptionDB {
 
     @Id

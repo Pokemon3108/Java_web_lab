@@ -1,6 +1,5 @@
 package com.project1.web1.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class StringDescription {
 

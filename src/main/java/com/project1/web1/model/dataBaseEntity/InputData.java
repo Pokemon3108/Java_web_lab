@@ -1,11 +1,17 @@
 package com.project1.web1.model.dataBaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "input_data")
 public class InputData {
     @Id
+
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 

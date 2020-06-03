@@ -1,7 +1,5 @@
 package com.project1.web1.service;
-import com.project1.web1.application.EmptyStringException;
-import com.project1.web1.application.MyIllegalArgumentException;
-import com.project1.web1.controller.StringController;
+
 import com.project1.web1.model.ListStringDto;
 import com.project1.web1.model.StringDescription;
 import org.apache.logging.log4j.LogManager;
@@ -45,6 +43,7 @@ public class StringDescriptionService {
         counterService.increment();
 
         validationService.checkResponse(str);
+
 
         if (cacheService.isInCashe(str)) {
             logger.info("Request has been taken from cache. String is: "+str);

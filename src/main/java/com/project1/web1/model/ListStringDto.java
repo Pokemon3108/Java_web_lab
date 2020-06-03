@@ -1,6 +1,5 @@
 package com.project1.web1.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListStringDto {

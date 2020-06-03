@@ -1,6 +1,10 @@
 package com.project1.web1.service;
 
-import com.project1.web1.model.*;
+import com.project1.web1.model.StatisticOutput;
+import com.project1.web1.model.ListStringDto;
+import com.project1.web1.model.StatisticDto;
+import com.project1.web1.model.StatisticInput;
+import com.project1.web1.model.StringDescription;
 import com.project1.web1.model.dataBaseEntity.InputData;
 import com.project1.web1.model.dataBaseEntity.Processes;
 import com.project1.web1.model.dataBaseEntity.StatisticDB;
